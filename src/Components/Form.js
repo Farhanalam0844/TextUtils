@@ -44,8 +44,10 @@ return(
   </div>
   <div className={`container text-${props.mode}`}>
     <h2 className={` text-${props.mode==='dark'?'light':'dark'}`}>Text Summary</h2>
-    <p className={` text-${props.mode==='dark'?'light':'dark'}`}>Words {text.split(' ').length} and Characters {text.length}</p>
-    <p className={` text-${props.mode==='dark'?'light':'dark'}`}>Minutes taken to read words {0.0042*text.split(' ').length}</p>
+    <p className={` text-${props.mode==='dark'?'light':'dark'}`}>Words {text.split(' ').filter((element)=>{ return element.length!==0
+
+    }).length} and Characters {text.length}</p>
+    <p className={` text-${props.mode==='dark'?'light':'dark'}`}>Minutes taken to read words { 0.0042*text.split(' ').filter((element)=>{ return element.length!==0}).length}</p>
   </div>
   <div className="container"></div>
   <h2 className={` text-${props.mode==='dark'?'light':'dark'}`}>Preview</h2>
